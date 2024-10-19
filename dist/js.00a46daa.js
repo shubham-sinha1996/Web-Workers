@@ -147,6 +147,9 @@ worker.addEventListener("message", function ({
     } = data.message;
     outputContent.innerHTML += `<h4>${res} (${time}ms)</h4>`;
   }
+  if (data.type === "exit") {
+    startBtn.removeAttribute("disabled");
+  }
 });
 },{"./worker.js":[["worker.68b749f9.js","js/worker.js"],"worker.68b749f9.js.map","js/worker.js"]}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -173,7 +176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60839" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56287" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -29,4 +29,7 @@ self.addEventListener("message", async function (evt) {
     });
     startTime = Date.now();
   }
+  self.postMessage({
+    type: "exit",
+  });
 });

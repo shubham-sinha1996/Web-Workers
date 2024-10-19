@@ -27,4 +27,8 @@ worker.addEventListener("message", function ({ data }) {
     let { res, time } = data.message;
     outputContent.innerHTML += `<h4>${res} (${time}ms)</h4>`;
   }
+
+  if (data.type === "exit") {
+    startBtn.removeAttribute("disabled");
+  }
 });
